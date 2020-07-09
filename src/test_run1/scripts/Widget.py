@@ -180,7 +180,7 @@ class Widget(QtWidgets.QWidget):
         elif phaseIDStraight == 4:
             self.straightSignal.setPixmap(picrg) 
         else:
-            pass
+            pass22f89ae28a9992aa233a05849d3e26beb01e45e8
         if msg.LeftSignalState == 3:
             self.leftSignal.setPixmap(piclr)
         elif msg.LeftSignalState == 5:
