@@ -179,22 +179,22 @@ class Widget(QtWidgets.QWidget):
     @QtCore.Slot()
     def init_pics(self):
         picsr = QtGui.QPixmap()
-        picsr.load("/traffic_lights/qt_lib/straight_red.png")
+        picsr.load("traffic_lights/qt_lib/straight_red.png")
         picsr = picsr.scaled(100,100)
         picsg = QtGui.QPixmap()
-        picsg.load("/traffic_lights/qt_lib/straight_green.png")
+        picsg.load("traffic_lights/qt_lib/straight_green.png")
         picsg = picsg.scaled(100,100)
         piclr = QtGui.QPixmap()
-        piclr.load("/traffic_lights/qt_lib/left_red.png")
+        piclr.load("traffic_lights/qt_lib/left_red.png")
         piclr = piclr.scaled(100,100)
         piclg = QtGui.QPixmap()
-        piclg.load("/traffic_lights/qt_lib/left_green.png")
+        piclg.load("traffic_lights/qt_lib/left_green.png")
         piclg = piclg.scaled(100,100)
         picrr = QtGui.QPixmap()
-        picrr.load("/traffic_lights/qt_lib/right_red.png")
+        picrr.load("traffic_lights/qt_lib/right_red.png")
         picrr = picrr.scaled(100,100)
         picrg = QtGui.QPixmap()
-        picrg.load("/traffic_lights/qt_lib/right_green.png")
+        picrg.load("traffic_lights/qt_lib/right_green.png")
         picrg = picrg.scaled(100,100)
         return piclg,piclr,picsg,picsr,picrg,picrr
 
@@ -264,7 +264,7 @@ class Widget(QtWidgets.QWidget):
         rospy.Subscriber("esr_objects",Object,self.esrCallback)
         rospy.Subscriber("glosa_version1",Object,self.glosaCallback)
         # QtWidgets.QApplication.processEvents()
-        rospy.spin()
+        # rospy.spin()
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
