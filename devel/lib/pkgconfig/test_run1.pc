@@ -3,6 +3,6 @@ prefix=/home/lz/test_demo/devel
 Name: test_run1
 Description: Description of test_run1
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/lz/test_demo/devel/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: message_runtime
