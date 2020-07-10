@@ -55,6 +55,7 @@ add_message_files(
   gpsUtm.msg
 	Object.msg
 	ObjectArray.msg
+	advSpeed.msg
 )
 
 ## Generate services in the 'srv' folder

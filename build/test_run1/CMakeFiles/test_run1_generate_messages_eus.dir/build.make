@@ -56,6 +56,7 @@ include test_run1/CMakeFiles/test_run1_generate_messages_eus.dir/progress.make
 test_run1/CMakeFiles/test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/spat.l
 test_run1/CMakeFiles/test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/gpsUtm.l
 test_run1/CMakeFiles/test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/Object.l
+test_run1/CMakeFiles/test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/advSpeed.l
 test_run1/CMakeFiles/test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/ObjectArray.l
 test_run1/CMakeFiles/test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/manifest.l
 
@@ -85,21 +86,27 @@ test_run1/CMakeFiles/test_run1_generate_messages_eus: /home/lz/test_demo/devel/s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from test_run1/Object.msg"
 	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lz/test_demo/src/test_run1/msg/Object.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg
 
+/home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/advSpeed.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/advSpeed.l: /home/lz/test_demo/src/test_run1/msg/advSpeed.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from test_run1/advSpeed.msg"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lz/test_demo/src/test_run1/msg/advSpeed.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg
+
 /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/ObjectArray.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/ObjectArray.l: /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg
 /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/ObjectArray.l: /home/lz/test_demo/src/test_run1/msg/Object.msg
 /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/ObjectArray.l: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from test_run1/ObjectArray.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from test_run1/ObjectArray.msg"
 	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg
 
 /home/lz/test_demo/devel/share/roseus/ros/test_run1/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for test_run1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp manifest code for test_run1"
 	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/lz/test_demo/devel/share/roseus/ros/test_run1 test_run1 geometry_msgs std_msgs
 
 test_run1_generate_messages_eus: test_run1/CMakeFiles/test_run1_generate_messages_eus
 test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/spat.l
 test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/gpsUtm.l
 test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/Object.l
+test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/advSpeed.l
 test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/ObjectArray.l
 test_run1_generate_messages_eus: /home/lz/test_demo/devel/share/roseus/ros/test_run1/manifest.l
 test_run1_generate_messages_eus: test_run1/CMakeFiles/test_run1_generate_messages_eus.dir/build.make

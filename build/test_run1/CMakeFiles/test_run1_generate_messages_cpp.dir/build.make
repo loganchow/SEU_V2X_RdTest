@@ -56,6 +56,7 @@ include test_run1/CMakeFiles/test_run1_generate_messages_cpp.dir/progress.make
 test_run1/CMakeFiles/test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/spat.h
 test_run1/CMakeFiles/test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/gpsUtm.h
 test_run1/CMakeFiles/test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/Object.h
+test_run1/CMakeFiles/test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/advSpeed.h
 test_run1/CMakeFiles/test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/ObjectArray.h
 
 
@@ -87,18 +88,25 @@ test_run1/CMakeFiles/test_run1_generate_messages_cpp: /home/lz/test_demo/devel/i
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from test_run1/Object.msg"
 	cd /home/lz/test_demo/src/test_run1 && /home/lz/test_demo/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lz/test_demo/src/test_run1/msg/Object.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/include/test_run1 -e /opt/ros/kinetic/share/gencpp/cmake/..
 
+/home/lz/test_demo/devel/include/test_run1/advSpeed.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lz/test_demo/devel/include/test_run1/advSpeed.h: /home/lz/test_demo/src/test_run1/msg/advSpeed.msg
+/home/lz/test_demo/devel/include/test_run1/advSpeed.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from test_run1/advSpeed.msg"
+	cd /home/lz/test_demo/src/test_run1 && /home/lz/test_demo/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lz/test_demo/src/test_run1/msg/advSpeed.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/include/test_run1 -e /opt/ros/kinetic/share/gencpp/cmake/..
+
 /home/lz/test_demo/devel/include/test_run1/ObjectArray.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/lz/test_demo/devel/include/test_run1/ObjectArray.h: /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg
 /home/lz/test_demo/devel/include/test_run1/ObjectArray.h: /home/lz/test_demo/src/test_run1/msg/Object.msg
 /home/lz/test_demo/devel/include/test_run1/ObjectArray.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 /home/lz/test_demo/devel/include/test_run1/ObjectArray.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from test_run1/ObjectArray.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from test_run1/ObjectArray.msg"
 	cd /home/lz/test_demo/src/test_run1 && /home/lz/test_demo/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/include/test_run1 -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 test_run1_generate_messages_cpp: test_run1/CMakeFiles/test_run1_generate_messages_cpp
 test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/spat.h
 test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/gpsUtm.h
 test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/Object.h
+test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/advSpeed.h
 test_run1_generate_messages_cpp: /home/lz/test_demo/devel/include/test_run1/ObjectArray.h
 test_run1_generate_messages_cpp: test_run1/CMakeFiles/test_run1_generate_messages_cpp.dir/build.make
 

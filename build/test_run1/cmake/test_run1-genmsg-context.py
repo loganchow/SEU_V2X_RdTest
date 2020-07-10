@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/lz/test_demo/src/test_run1/msg/spat.msg;/home/lz/test_demo/src/test_run1/msg/gpsUtm.msg;/home/lz/test_demo/src/test_run1/msg/Object.msg;/home/lz/test_demo/src/test_run1/msg/ObjectArray.msg"
+messages_str = "/home/lz/test_demo/src/test_run1/msg/spat.msg;/home/lz/test_demo/src/test_run1/msg/gpsUtm.msg;/home/lz/test_demo/src/test_run1/msg/Object.msg;/home/lz/test_demo/src/test_run1/msg/ObjectArray.msg;/home/lz/test_demo/src/test_run1/msg/advSpeed.msg"
 services_str = ""
 pkg_name = "test_run1"
 dependencies_str = "geometry_msgs;std_msgs"

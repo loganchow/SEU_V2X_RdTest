@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js"
   "/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js"
   "/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/Object.js"
+  "/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/advSpeed.js"
   "/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js"
 )
 

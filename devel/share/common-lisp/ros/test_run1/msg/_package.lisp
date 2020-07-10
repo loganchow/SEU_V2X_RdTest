@@ -5,6 +5,8 @@
    "OBJECT"
    "<OBJECTARRAY>"
    "OBJECTARRAY"
+   "<ADVSPEED>"
+   "ADVSPEED"
    "<GPSUTM>"
    "GPSUTM"
    "<OBU_MSG>"

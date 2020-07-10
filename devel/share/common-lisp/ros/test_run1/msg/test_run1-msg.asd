@@ -10,6 +10,8 @@
     (:file "_package_Object" :depends-on ("_package"))
     (:file "ObjectArray" :depends-on ("_package_ObjectArray"))
     (:file "_package_ObjectArray" :depends-on ("_package"))
+    (:file "advSpeed" :depends-on ("_package_advSpeed"))
+    (:file "_package_advSpeed" :depends-on ("_package"))
     (:file "gpsUtm" :depends-on ("_package_gpsUtm"))
     (:file "_package_gpsUtm" :depends-on ("_package"))
     (:file "obu_msg" :depends-on ("_package_obu_msg"))

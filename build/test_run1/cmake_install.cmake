@@ -38,6 +38,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/lz/test_demo/src/test_run1/msg/gpsUtm.msg"
     "/home/lz/test_demo/src/test_run1/msg/Object.msg"
     "/home/lz/test_demo/src/test_run1/msg/ObjectArray.msg"
+    "/home/lz/test_demo/src/test_run1/msg/advSpeed.msg"
     )
 endif()
 

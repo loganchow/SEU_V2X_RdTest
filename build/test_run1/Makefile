@@ -226,6 +226,21 @@ test_run1_generate_messages_cpp/fast:
 .PHONY : test_run1_generate_messages_cpp/fast
 
 # Convenience name for target.
+test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_advSpeed.dir/rule:
+	cd /home/lz/test_demo/build && $(MAKE) -f CMakeFiles/Makefile2 test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_advSpeed.dir/rule
+.PHONY : test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_advSpeed.dir/rule
+
+# Convenience name for target.
+_test_run1_generate_messages_check_deps_advSpeed: test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_advSpeed.dir/rule
+
+.PHONY : _test_run1_generate_messages_check_deps_advSpeed
+
+# fast build rule for target.
+_test_run1_generate_messages_check_deps_advSpeed/fast:
+	cd /home/lz/test_demo/build && $(MAKE) -f test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_advSpeed.dir/build.make test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_advSpeed.dir/build
+.PHONY : _test_run1_generate_messages_check_deps_advSpeed/fast
+
+# Convenience name for target.
 test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_Object.dir/rule:
 	cd /home/lz/test_demo/build && $(MAKE) -f CMakeFiles/Makefile2 test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_Object.dir/rule
 .PHONY : test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_Object.dir/rule
@@ -706,6 +721,7 @@ help:
 	@echo "... test_run1_gencpp"
 	@echo "... edit_cache"
 	@echo "... test_run1_generate_messages_cpp"
+	@echo "... _test_run1_generate_messages_check_deps_advSpeed"
 	@echo "... _test_run1_generate_messages_check_deps_Object"
 	@echo "... _test_run1_generate_messages_check_deps_gpsUtm"
 	@echo "... std_msgs_generate_messages_py"

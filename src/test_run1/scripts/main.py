@@ -8,6 +8,7 @@ from PySide2 import QtGui
 from test_run1.msg import spat
 from test_run1.msg import gpsUtm
 from test_run1.msg import Object
+from test_run1.msg import advSpeed
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self,widget):
@@ -131,7 +132,7 @@ class Widget(QtWidgets.QWidget):
 
         self.lowerSpeed = QtWidgets.QLCDNumber(self.groupboxCenter)
         self.upperSpeed = QtWidgets.QLCDNumber(self.groupboxCenter)
-        self.adviceOperation = QtWidgets.QLabel("BRAKE!",self.groupboxCenter)
+        self.adviceOperation = QtWidgets.QLabel("Welcome!",self.groupboxCenter)
 
         fontLcd = QtGui.QFont()
         fontLcd.setFamily(u"Arial Black")
@@ -215,8 +216,19 @@ class Widget(QtWidgets.QWidget):
 
     @QtCore.Slot()
     def glosaCallback(self,msg):
-        self.upperSpeed.setText(str(msg.upperSpeed))
-        self.lowerSpeed.setText(str(msg.bottomSpeed))
+        upperV = 3.6*msg.upperSpeed
+        lowerV = 3.6*msg.bottomSpeed
+        if msg.keepCurSpeed == 1:
+            self.adviceOperation.setText("Hold then STOP!")
+            self.upperSpeed.display("HOLD")
+            self.lowerSpeed.display("HOLD")
+        elif msg.keepCurSpeed ==0:
+            self.adviceOperation.setText("Modify Speed")
+            self.upperSpeed.display(upperV)
+            self.lowerSpeed.display(lowerV)
+        else:
+            pass
+
 
     @QtCore.Slot()
     def v2xCallback(self,msg):
@@ -253,8 +265,8 @@ class Widget(QtWidgets.QWidget):
         rospy.init_node('qt_gui',anonymous=True)                    
         rospy.Subscriber("gpsUtm",gpsUtm,self.gpsCallback)
         rospy.Subscriber("v2x_spat",spat,self.v2xCallback)
-        rospy.Subscriber("esr_objects",Object,self.esrCallback)
-        rospy.Subscriber("glosa_version1",Object,self.glosaCallback)
+        rospy.Subscriber("esr_object",Object,self.esrCallback)
+        rospy.Subscriber("advSpeed",advSpeed,self.glosaCallback)
         # QtWidgets.QApplication.processEvents()
         # rospy.spin()
 

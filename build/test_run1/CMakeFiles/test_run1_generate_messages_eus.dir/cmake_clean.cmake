@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "/home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/spat.l"
   "/home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/gpsUtm.l"
   "/home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/Object.l"
+  "/home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/advSpeed.l"
   "/home/lz/test_demo/devel/share/roseus/ros/test_run1/msg/ObjectArray.l"
   "/home/lz/test_demo/devel/share/roseus/ros/test_run1/manifest.l"
 )
