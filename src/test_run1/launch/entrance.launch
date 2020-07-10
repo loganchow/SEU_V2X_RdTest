@@ -1,0 +1,5 @@
+<launch>
+    <node name="qt_gui" pkg="test_run1"
+          type="main.py" output="screen"/>
+</launch>
+

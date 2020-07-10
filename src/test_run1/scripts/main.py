@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # This Python file uses the following encoding: utf-8
-import sys,rospy
+import sys,rospy,os
 import numpy as np
 from PySide2 import QtCore
 from PySide2 import QtWidgets
@@ -178,23 +178,24 @@ class Widget(QtWidgets.QWidget):
 
     @QtCore.Slot()
     def init_pics(self):
+        path = os.path.abspath(os.path.dirname(sys.argv[0]))
         picsr = QtGui.QPixmap()
-        picsr.load("traffic_lights/qt_lib/straight_red.png")
+        picsr.load(path+"/traffic_lights/qt_lib/straight_red.png")
         picsr = picsr.scaled(100,100)
         picsg = QtGui.QPixmap()
-        picsg.load("traffic_lights/qt_lib/straight_green.png")
+        picsg.load(path+"/traffic_lights/qt_lib/straight_green.png")
         picsg = picsg.scaled(100,100)
         piclr = QtGui.QPixmap()
-        piclr.load("traffic_lights/qt_lib/left_red.png")
+        piclr.load(path+"/traffic_lights/qt_lib/left_red.png")
         piclr = piclr.scaled(100,100)
         piclg = QtGui.QPixmap()
-        piclg.load("traffic_lights/qt_lib/left_green.png")
+        piclg.load(path+"/traffic_lights/qt_lib/left_green.png")
         piclg = piclg.scaled(100,100)
         picrr = QtGui.QPixmap()
-        picrr.load("traffic_lights/qt_lib/right_red.png")
+        picrr.load(path+"/traffic_lights/qt_lib/right_red.png")
         picrr = picrr.scaled(100,100)
         picrg = QtGui.QPixmap()
-        picrg.load("traffic_lights/qt_lib/right_green.png")
+        picrg.load(path+"/traffic_lights/qt_lib/right_green.png")
         picrg = picrg.scaled(100,100)
         return piclg,piclr,picsg,picsr,picrg,picrr
 
@@ -209,6 +210,7 @@ class Widget(QtWidgets.QWidget):
         # change the pre info
         self.limitSpeed.setText(str(msg.SpeedLimit))
         self.dis2Stop.setText(str(msg.dis2inter))
+        self.interID.setText(str(msg.stationId))
         # Change the color of signal indication pics
         self.rightSignal.setPixmap(picrg)
         if msg.StrSignalState == 3:
@@ -227,7 +229,7 @@ class Widget(QtWidgets.QWidget):
             self.LeftSignal.setPixmap(picrg)
         else:
             pass
-        
+        return None
         # QtWidgets.QApplication.processEvents()
 
     @QtCore.Slot()
@@ -237,15 +239,13 @@ class Widget(QtWidgets.QWidget):
         v3 = msg.up_velocity
         ev = np.sqrt(v1**2+v2**2+v3**2)
         self.dis2Stop.setText(str(ev))
-        # rate = rospy.Rate(100)
-        # rate.sleep()
+        return ev
         # QtWidgets.QApplication.processEvents()
 
     @QtCore.Slot()
     def esrCallback(self,msg):
         self.pvSpeed.setText(str(msg.speed))
-        # rate = rospy.Rate(100)
-        # rate.sleep()
+        return None
         # QtWidgets.QApplication.processEvents()
 
     @QtCore.Slot()
@@ -254,14 +254,13 @@ class Widget(QtWidgets.QWidget):
         self.lowerSpeed.setText(str(msg.bottomSpeed))
         # rate = rospy.Rate(100)
         # rate.sleep()
-        
 
     @QtCore.Slot()
     def ros_connect(self):
         rospy.init_node('qt_gui',anonymous=True)
         rospy.Subscriber("v2x_spat",spat,self.v2xCallback)
-        rospy.Subscriber("gpsUtm",gpsUtm,self.gpsCallback)
         rospy.Subscriber("esr_objects",Object,self.esrCallback)
+        rospy.Subscriber("gpsUtm",gpsUtm,self.gpsCallback)
         rospy.Subscriber("glosa_version1",Object,self.glosaCallback)
         # QtWidgets.QApplication.processEvents()
         # rospy.spin()
