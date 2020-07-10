@@ -198,11 +198,29 @@ class Widget(QtWidgets.QWidget):
         picrg.load(path+"/traffic_lights/qt_lib/right_green.png")
         picrg = picrg.scaled(100,100)
         return piclg,piclr,picsg,picsr,picrg,picrr
+    
+    @QtCore.Slot()
+    def gpsCallback(self,msg):
+        v1 = msg.north_velocity
+        v2 = msg.east_velocity
+        v3 = msg.up_velocity
+        ev = np.sqrt(v1**2+v2**2+v3**2)
+        self.evSpeed.setText(str(ev))
+        # QtWidgets.QApplication.processEvents()
+
+    @QtCore.Slot()
+    def esrCallback(self,msg):
+        self.pvSpeed.setText(str(msg.speed))
+        # QtWidgets.QApplication.processEvents()
+
+    @QtCore.Slot()
+    def glosaCallback(self,msg):
+        self.upperSpeed.setText(str(msg.upperSpeed))
+        self.lowerSpeed.setText(str(msg.bottomSpeed))
 
     @QtCore.Slot()
     def v2xCallback(self,msg):
         piclg,piclr,picsg,picsr,picrg,picrr = self.init_pics()
-        
         # Change the time indication 
         self.lcdTimeLeftSignal.display(str(msg.LeftlikelyEndTime))
         self.lcdTimeStraightSignal.display(str(msg.StrlikelyEndTime))
@@ -229,38 +247,13 @@ class Widget(QtWidgets.QWidget):
             self.LeftSignal.setPixmap(picrg)
         else:
             pass
-        return None
-        # QtWidgets.QApplication.processEvents()
-
-    @QtCore.Slot()
-    def gpsCallback(self,msg):
-        v1 = msg.north_velocity
-        v2 = msg.east_velocity
-        v3 = msg.up_velocity
-        ev = np.sqrt(v1**2+v2**2+v3**2)
-        self.dis2Stop.setText(str(ev))
-        return ev
-        # QtWidgets.QApplication.processEvents()
-
-    @QtCore.Slot()
-    def esrCallback(self,msg):
-        self.pvSpeed.setText(str(msg.speed))
-        return None
-        # QtWidgets.QApplication.processEvents()
-
-    @QtCore.Slot()
-    def glosaCallback(self,msg):
-        self.upperSpeed.setText(str(msg.upperSpeed))
-        self.lowerSpeed.setText(str(msg.bottomSpeed))
-        # rate = rospy.Rate(100)
-        # rate.sleep()
 
     @QtCore.Slot()
     def ros_connect(self):
-        rospy.init_node('qt_gui',anonymous=True)
+        rospy.init_node('qt_gui',anonymous=True)                    
+        rospy.Subscriber("gpsUtm",gpsUtm,self.gpsCallback)
         rospy.Subscriber("v2x_spat",spat,self.v2xCallback)
         rospy.Subscriber("esr_objects",Object,self.esrCallback)
-        rospy.Subscriber("gpsUtm",gpsUtm,self.gpsCallback)
         rospy.Subscriber("glosa_version1",Object,self.glosaCallback)
         # QtWidgets.QApplication.processEvents()
         # rospy.spin()
