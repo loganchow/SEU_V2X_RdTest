@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # This Python file uses the following encoding: utf-8
-import sys,rospy,os
+import time,rospy,os,sys
 import numpy as np
 from PySide2 import QtCore
 from PySide2 import QtWidgets
@@ -53,7 +53,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # Window dimensions
         # geometry = QtCore.qApp.desktop().availableGeometry(self)
         # self.setFixedSize(geometry.width() * 0.65, geometry.height() * 0.6)
-        self.resize(800,600)
+        self.resize(1200,650)
 
         self.setCentralWidget(widget)
 
@@ -64,7 +64,7 @@ class Widget(QtWidgets.QWidget):
         # 左侧一栏
         self.groupboxBasic = QtWidgets.QGroupBox(self)
         self.groupboxBasic.setTitle("Basic")
-        self.groupboxBasic.setGeometry(QtCore.QRect(30, 10, 450, 500))
+        self.groupboxBasic.setGeometry(QtCore.QRect(30, 10, 450, 700))
 
         # 提示标签的实例化
         self.labelEvspeed = QtWidgets.QLabel("Ego Speed: ",self.groupboxBasic)
@@ -74,6 +74,9 @@ class Widget(QtWidgets.QWidget):
         self.labelInterID = QtWidgets.QLabel("IntersectionID: ",self.groupboxBasic)
         self.labelNumpv = QtWidgets.QLabel("Num of Preceding: ",self.groupboxBasic)
         self.labelPositionEv = QtWidgets.QLabel("EV Position: ",self.groupboxBasic)
+        self.labelLatitude = QtWidgets.QLabel("Latitude:",self.groupboxBasic)
+        self.labelLongitude = QtWidgets.QLabel("Longitude:",self.groupboxBasic)
+        self.labelHeight = QtWidgets.QLabel("Height:",self.groupboxBasic)
 
         # 显示值标签的实例化
         self.evSpeed = QtWidgets.QLabel("0.00",self.groupboxBasic)
@@ -81,6 +84,9 @@ class Widget(QtWidgets.QWidget):
         self.limitSpeed = QtWidgets.QLabel("0.00",self.groupboxBasic)
         self.dis2Stop = QtWidgets.QLabel("0.00",self.groupboxBasic)
         self.interID = QtWidgets.QLabel("000000",self.groupboxBasic)
+        self.latitude = QtWidgets.QLabel("0.0",self.groupboxBasic)
+        self.longitude = QtWidgets.QLabel("0.0",self.groupboxBasic)
+        self.height = QtWidgets.QLabel("0.0",self.groupboxBasic)
 
         self.numPv = QtWidgets.QDoubleSpinBox(self.groupboxBasic)
         self.buttonNumPv = QtWidgets.QPushButton("Enter",self.groupboxBasic)
@@ -93,6 +99,9 @@ class Widget(QtWidgets.QWidget):
         self.labelInterID.setGeometry(QtCore.QRect(10, 230, 200, 31))
         self.labelNumpv.setGeometry(QtCore.QRect(10, 280, 250, 31))
         self.labelPositionEv.setGeometry(QtCore.QRect(10, 380, 250, 31))
+        self.labelLatitude.setGeometry(QtCore.QRect(10,430,250,31))
+        self.labelLongitude.setGeometry(QtCore.QRect(10,480,250,31))
+        self.labelHeight.setGeometry(QtCore.QRect(10,530,250,31))
 
         # 显示标签的定位
         self.evSpeed.setGeometry(QtCore.QRect(230, 30, 100, 31))
@@ -101,7 +110,9 @@ class Widget(QtWidgets.QWidget):
         self.dis2Stop.setGeometry(QtCore.QRect(230, 180, 100, 31))
         self.interID.setGeometry(QtCore.QRect(230, 180, 100, 31))
         self.interID.setGeometry(QtCore.QRect(230, 230, 100, 31))
-
+        self.latitude.setGeometry(QtCore.QRect(230,430,250,31))
+        self.longitude.setGeometry(QtCore.QRect(230,480,250,31))
+        self.height.setGeometry(QtCore.QRect(230,530,250,31))
         self.numPv.setGeometry(QtCore.QRect(20, 330, 100, 31))
         self.buttonNumPv.setGeometry(QtCore.QRect(230, 330, 100, 31))
 
@@ -159,9 +170,17 @@ class Widget(QtWidgets.QWidget):
         self.lcdTimeStraightSignal = QtWidgets.QLCDNumber(self.groupboxSignal)
         self.lcdTimeRightSignal = QtWidgets.QLCDNumber(self.groupboxSignal)
 
+        self.validLeft = QtWidgets.QLabel("Valid",self.groupboxSignal)
+        self.validStraight = QtWidgets.QLabel("Valid",self.groupboxSignal)
+        self.validRight = QtWidgets.QLabel("inValid",self.groupboxSignal)
+
         self.lcdTimeLeftSignal.setGeometry(QtCore.QRect(20,240,64,64))
         self.lcdTimeStraightSignal.setGeometry(QtCore.QRect(140,240,64,64))
         self.lcdTimeRightSignal.setGeometry(QtCore.QRect(270,240,64,64))
+
+        self.validLeft.setGeometry(QtCore.QRect(30,310,150,31))
+        self.validStraight.setGeometry(QtCore.QRect(150,310,150,31))
+        self.validRight.setGeometry(QtCore.QRect(280,310,150,31))
 
         fontLcdSmall = QtGui.QFont()
         fontLcdSmall.setFamily(u"Arial Black")
@@ -170,6 +189,9 @@ class Widget(QtWidgets.QWidget):
         self.lcdTimeLeftSignal.setFont(fontLcdSmall)
         self.lcdTimeStraightSignal.setFont(fontLcdSmall)
         self.lcdTimeRightSignal.setFont(fontLcdSmall)
+        self.validLeft.setFont(fontLabel)
+        self.validStraight.setFont(fontLabel)
+        self.validRight.setFont(fontLabel)
  
         self.buttonNumPv.clicked.connect(self.ros_connect)
 
@@ -202,18 +224,19 @@ class Widget(QtWidgets.QWidget):
     
     @QtCore.Slot()
     def gpsCallback(self,msg):
-        v1 = msg.north_velocity
-        v2 = msg.east_velocity
-        v3 = msg.up_velocity
+        v1 = msg.north_velocity*3.6
+        v2 = msg.east_velocity*3.6
+        v3 = msg.up_velocity*3.6
         ev = np.sqrt(v1**2+v2**2+v3**2)
-        self.evSpeed.setText(str(ev))
-        # QtWidgets.QApplication.processEvents()
+        # self.evSpeed.setText(str(ev))
+        self.latitude.setText(str(msg.latitude))
+        self.longitude.setText(str(msg.longitude))
+        self.height.setText(str(msg.height))
 
     @QtCore.Slot()
     def esrCallback(self,msg):
         self.pvSpeed.setText(str(msg.speed))
-        # QtWidgets.QApplication.processEvents()
-
+        
     @QtCore.Slot()
     def glosaCallback(self,msg):
         upperV = 3.6*msg.upperSpeed
@@ -229,7 +252,6 @@ class Widget(QtWidgets.QWidget):
         else:
             pass
 
-
     @QtCore.Slot()
     def v2xCallback(self,msg):
         piclg,piclr,picsg,picsr,picrg,picrr = self.init_pics()
@@ -242,24 +264,53 @@ class Widget(QtWidgets.QWidget):
         self.dis2Stop.setText(str(msg.dis2inter))
         self.interID.setText(str(msg.stationId))
         # Change the color of signal indication pics
-        self.rightSignal.setPixmap(picrg)
-        if msg.StrSignalState == 3:
-            self.straightSignal.setPixmap(picsr)       
-        elif msg.StrSignalState == 5:
-            self.straightSignal.setPixmap(picsg)    
-        elif msg.StrSignalState == 4:
-            self.straightSignal.setPixmap(picrg) 
-        else:
-            pass
-        if msg.LeftSignalState == 3:
-            self.leftSignal.setPixmap(piclr)
-        elif msg.LeftSignalState == 5:
-            self.leftSignal.setPixmap(piclg)
-        elif msg.LeftSignalState == 4:
-            self.LeftSignal.setPixmap(picrg)
-        else:
-            pass
-
+        # self.rightSignal.setPixmap(picrg)
+        if msg.Left_is_val == 0:
+            self.validLeft.setText("inValid")
+            self.lcdTimeLeftSignal.display("")
+            self.leftSignal.setPixmap(None)
+        elif msg.Left_is_val == 1:
+            self.validLeft.setText("valid")
+            self.lcdTimeLeftSignal.display(str(msg.LeftlikelyEndTime))
+            if msg.LeftSignalState == 3:
+                self.leftSignal.setPixmap(piclr)
+            elif msg.LeftSignalState == 5:
+                self.leftSignal.setPixmap(piclg)
+            elif msg.LeftSignalState == 4:
+                self.LeftSignal.setPixmap(picrg)
+            else:
+                pass
+        if msg.Str_is_val ==0:
+            self.validStraight.setText("inValid")
+            self.lcdTimeStraightSignal.display("")
+            self.straightSignal.setPixmap(None)
+        elif msg.Str_is_val ==1:
+            self.validStraight.setText("valid")
+            self.lcdTimeStraightSignal.display(str(msg.LeftlikelyEndTime))
+            if msg.StrSignalState == 3:
+                self.straightSignal.setPixmap(picsr)       
+            elif msg.StrSignalState == 5:
+                self.straightSignal.setPixmap(picsg)    
+            elif msg.StrSignalState == 4:
+                self.straightSignal.setPixmap(picrg) 
+            else:
+                pass
+        if msg.Right_is_val ==0:
+            self.validRight.setText("inValid")
+            self.lcdTimeRightSignal.display("")
+            self.rightSignal.setPixmap(None)
+        elif msg.Right_is_val ==1:
+            self.validRight.setText("valid")
+            self.lcdTimeRightSignal.display(str(msg.LeftlikelyEndTime))
+            if msg.StrSignalState == 3:
+                self.rightSignal.setPixmap(picsr)       
+            elif msg.StrSignalState == 5:
+                self.rightSignal.setPixmap(picsg)    
+            elif msg.StrSignalState == 4:
+                self.rightSignal.setPixmap(picrg) 
+            else:
+                pass
+        
     @QtCore.Slot()
     def ros_connect(self):
         rospy.init_node('qt_gui',anonymous=True)                    
@@ -267,7 +318,6 @@ class Widget(QtWidgets.QWidget):
         rospy.Subscriber("v2x_spat",spat,self.v2xCallback)
         rospy.Subscriber("esr_object",Object,self.esrCallback)
         rospy.Subscriber("advSpeed",advSpeed,self.glosaCallback)
-        # QtWidgets.QApplication.processEvents()
         # rospy.spin()
 
 if __name__ == "__main__":
