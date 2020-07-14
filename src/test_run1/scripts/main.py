@@ -9,6 +9,7 @@ from test_run1.msg import spat
 from test_run1.msg import gpsUtm
 from test_run1.msg import Object
 from test_run1.msg import advSpeed
+from from test_run1.msg import qtGUI
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self,widget):
@@ -222,47 +223,106 @@ class Widget(QtWidgets.QWidget):
         picrg = picrg.scaled(100,100)
         return piclg,piclr,picsg,picsr,picrg,picrr
     
-    @QtCore.Slot()
-    def gpsCallback(self,msg):
-        v1 = msg.north_velocity*3.6
-        v2 = msg.east_velocity*3.6
-        v3 = msg.up_velocity*3.6
-        ev = np.sqrt(v1**2+v2**2+v3**2)
-        # self.evSpeed.setText(str(ev))
-        self.latitude.setText(str(msg.latitude))
-        self.longitude.setText(str(msg.longitude))
-        self.height.setText(str(msg.height))
+    # @QtCore.Slot()
+    # def gpsCallback(self,msg):
+    #     v1 = msg.north_velocity*3.6
+    #     v2 = msg.east_velocity*3.6
+    #     v3 = msg.up_velocity*3.6
+    #     ev = np.sqrt(v1**2+v2**2+v3**2)
+    #     # self.evSpeed.setText(str(ev))
+    #     self.latitude.setText(str(msg.latitude))
+    #     self.longitude.setText(str(msg.longitude))
+    #     self.height.setText(str(msg.height))
 
-    @QtCore.Slot()
-    def esrCallback(self,msg):
-        self.pvSpeed.setText(str(msg.speed))
+    # @QtCore.Slot()
+    # def esrCallback(self,msg):
+    #     self.pvSpeed.setText(str(msg.speed))
         
-    @QtCore.Slot()
-    def glosaCallback(self,msg):
-        upperV = 3.6*msg.upperSpeed
-        lowerV = 3.6*msg.bottomSpeed
-        if msg.keepCurSpeed == 1:
-            self.adviceOperation.setText("Hold then STOP!")
-            self.upperSpeed.display("HOLD")
-            self.lowerSpeed.display("HOLD")
-        elif msg.keepCurSpeed ==0:
-            self.adviceOperation.setText("Modify Speed")
-            self.upperSpeed.display(upperV)
-            self.lowerSpeed.display(lowerV)
-        else:
-            pass
+    # @QtCore.Slot()
+    # def glosaCallback(self,msg):
+    #     upperV = 3.6*msg.upperSpeed
+    #     lowerV = 3.6*msg.bottomSpeed
+    #     if msg.keepCurSpeed == 1:
+    #         self.adviceOperation.setText("Hold then STOP!")
+    #         self.upperSpeed.display("HOLD")
+    #         self.lowerSpeed.display("HOLD")
+    #     elif msg.keepCurSpeed ==0:
+    #         self.adviceOperation.setText("Modify Speed")
+    #         self.upperSpeed.display(upperV)
+    #         self.lowerSpeed.display(lowerV)
+    #     else:
+    #         pass
+
+    # @QtCore.Slot()
+    # def v2xCallback(self,msg):
+    #     piclg,piclr,picsg,picsr,picrg,picrr = self.init_pics()
+    #     # Change the time indication 
+    #     self.lcdTimeLeftSignal.display(str(msg.LeftlikelyEndTime))
+    #     self.lcdTimeStraightSignal.display(str(msg.StrlikelyEndTime))
+    #     self.lcdTimeRightSignal.display(str(msg.RightlikelyEndTime))
+    #     # change the pre info
+    #     self.limitSpeed.setText(str(msg.SpeedLimit))
+    #     self.dis2Stop.setText(str(msg.dis2inter))
+    #     self.interID.setText(str(msg.stationId))
+    #     # Change the color of signal indication pics
+    #     # self.rightSignal.setPixmap(picrg)
+    #     if msg.Left_is_val == 0:
+    #         self.validLeft.setText("inValid")
+    #         self.lcdTimeLeftSignal.display("")
+    #         self.leftSignal.setPixmap(None)
+    #     elif msg.Left_is_val == 1:
+    #         self.validLeft.setText("valid")
+    #         self.lcdTimeLeftSignal.display(str(msg.LeftlikelyEndTime))
+    #         if msg.LeftSignalState == 3:
+    #             self.leftSignal.setPixmap(piclr)
+    #         elif msg.LeftSignalState == 5:
+    #             self.leftSignal.setPixmap(piclg)
+    #         elif msg.LeftSignalState == 4:
+    #             self.LeftSignal.setPixmap(picrg)
+    #         else:
+    #             pass
+    #     if msg.Str_is_val ==0:
+    #         self.validStraight.setText("inValid")
+    #         self.lcdTimeStraightSignal.display("")
+    #         self.straightSignal.setPixmap(None)
+    #     elif msg.Str_is_val ==1:
+    #         self.validStraight.setText("valid")
+    #         self.lcdTimeStraightSignal.display(str(msg.LeftlikelyEndTime))
+    #         if msg.StrSignalState == 3:
+    #             self.straightSignal.setPixmap(picsr)       
+    #         elif msg.StrSignalState == 5:
+    #             self.straightSignal.setPixmap(picsg)    
+    #         elif msg.StrSignalState == 4:
+    #             self.straightSignal.setPixmap(picrg) 
+    #         else:
+    #             pass
+    #     if msg.Right_is_val ==0:
+    #         self.validRight.setText("inValid")
+    #         self.lcdTimeRightSignal.display("")
+    #         self.rightSignal.setPixmap(None)
+    #     elif msg.Right_is_val ==1:
+    #         self.validRight.setText("valid")
+    #         self.lcdTimeRightSignal.display(str(msg.LeftlikelyEndTime))
+    #         if msg.StrSignalState == 3:
+    #             self.rightSignal.setPixmap(picsr)       
+    #         elif msg.StrSignalState == 5:
+    #             self.rightSignal.setPixmap(picsg)    
+    #         elif msg.StrSignalState == 4:
+    #             self.rightSignal.setPixmap(picrg) 
+    #         else:
+    #             pass
 
     @QtCore.Slot()
-    def v2xCallback(self,msg):
+    def guiCallback(self,msg):
         piclg,piclr,picsg,picsr,picrg,picrr = self.init_pics()
         # Change the time indication 
         self.lcdTimeLeftSignal.display(str(msg.LeftlikelyEndTime))
         self.lcdTimeStraightSignal.display(str(msg.StrlikelyEndTime))
         self.lcdTimeRightSignal.display(str(msg.RightlikelyEndTime))
         # change the pre info
-        self.limitSpeed.setText(str(msg.SpeedLimit))
-        self.dis2Stop.setText(str(msg.dis2inter))
-        self.interID.setText(str(msg.stationId))
+        self.limitSpeed.setText(str(msg.LimitSpeed))
+        self.dis2Stop.setText(str(msg.Dis2Stopline))
+        self.interID.setText(str(msg.intersectionID))
         # Change the color of signal indication pics
         # self.rightSignal.setPixmap(picrg)
         if msg.Left_is_val == 0:
@@ -272,34 +332,34 @@ class Widget(QtWidgets.QWidget):
         elif msg.Left_is_val == 1:
             self.validLeft.setText("valid")
             self.lcdTimeLeftSignal.display(str(msg.LeftlikelyEndTime))
-            if msg.LeftSignalState == 3:
+            if msg.LeftColor == 3:
                 self.leftSignal.setPixmap(piclr)
-            elif msg.LeftSignalState == 5:
+            elif msg.LeftColor == 5:
                 self.leftSignal.setPixmap(piclg)
-            elif msg.LeftSignalState == 4:
+            elif msg.LeftColor == 4:
                 self.LeftSignal.setPixmap(picrg)
             else:
                 pass
-        if msg.Str_is_val ==0:
+        if msg.Str_is_val == 0:
             self.validStraight.setText("inValid")
             self.lcdTimeStraightSignal.display("")
             self.straightSignal.setPixmap(None)
-        elif msg.Str_is_val ==1:
+        elif msg.Str_is_val == 1:
             self.validStraight.setText("valid")
             self.lcdTimeStraightSignal.display(str(msg.LeftlikelyEndTime))
-            if msg.StrSignalState == 3:
+            if msg.StrColor == 3:
                 self.straightSignal.setPixmap(picsr)       
-            elif msg.StrSignalState == 5:
+            elif msg.StrColor == 5:
                 self.straightSignal.setPixmap(picsg)    
-            elif msg.StrSignalState == 4:
+            elif msg.StrColor == 4:
                 self.straightSignal.setPixmap(picrg) 
             else:
                 pass
-        if msg.Right_is_val ==0:
+        if msg.Right_is_val == 0:
             self.validRight.setText("inValid")
             self.lcdTimeRightSignal.display("")
             self.rightSignal.setPixmap(None)
-        elif msg.Right_is_val ==1:
+        elif msg.Right_is_val == 1:
             self.validRight.setText("valid")
             self.lcdTimeRightSignal.display(str(msg.LeftlikelyEndTime))
             if msg.StrSignalState == 3:
@@ -310,14 +370,33 @@ class Widget(QtWidgets.QWidget):
                 self.rightSignal.setPixmap(picrg) 
             else:
                 pass
-        
+        self.evSpeed.setText(str(EgoSpeed))
+        self.pvSpeed.setText(str(PreSpeed))
+        self.latitude.setText(str(msg.latitude))
+        self.longitude.setText(str(msg.longitude))
+        self.height.setText(str(msg.height))
+        upperV = 3.6*msg.upperSpeed
+        lowerV = 3.6*msg.bottomSpeed
+        if msg.keepCurSpeed == 1:
+            self.adviceOperation.setText("Hold then STOP!")
+            self.upperSpeed.display("HOLD")
+            self.lowerSpeed.display("HOLD")
+        elif msg.keepCurSpeed == 0:
+            self.adviceOperation.setText("Modify Speed")
+            self.upperSpeed.display(upperV)
+            self.lowerSpeed.display(lowerV)
+        else:
+            pass
+
+
     @QtCore.Slot()
     def ros_connect(self):
         rospy.init_node('qt_gui',anonymous=True)                    
-        rospy.Subscriber("gpsUtm",gpsUtm,self.gpsCallback)
-        rospy.Subscriber("v2x_spat",spat,self.v2xCallback)
-        rospy.Subscriber("esr_object",Object,self.esrCallback)
-        rospy.Subscriber("advSpeed",advSpeed,self.glosaCallback)
+        # rospy.Subscriber("gpsUtm",gpsUtm,self.gpsCallback)
+        # rospy.Subscriber("v2x_spat",spat,self.v2xCallback)
+        # rospy.Subscriber("esr_object",Object,self.esrCallback)
+        # rospy.Subscriber("advSpeed",advSpeed,self.glosaCallback)
+        rospy.Subscriber("gui",qtGUI,self.guiCallback)
         # rospy.spin()
 
 if __name__ == "__main__":
