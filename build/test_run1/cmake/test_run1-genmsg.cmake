@@ -37,14 +37,14 @@ add_custom_target(_test_run1_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "test_run1" "/home/lz/test_demo/src/test_run1/msg/Object.msg" "std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg" NAME_WE)
-add_custom_target(_test_run1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "test_run1" "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg" ""
-)
-
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/spat.msg" NAME_WE)
 add_custom_target(_test_run1_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "test_run1" "/home/lz/test_demo/src/test_run1/msg/spat.msg" "std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg" NAME_WE)
+add_custom_target(_test_run1_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "test_run1" "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg" ""
 )
 
 #
@@ -72,12 +72,6 @@ _generate_msg_cpp(test_run1
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/test_run1
 )
 _generate_msg_cpp(test_run1
-  "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/test_run1
-)
-_generate_msg_cpp(test_run1
   "/home/lz/test_demo/src/test_run1/msg/Object.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
@@ -87,6 +81,12 @@ _generate_msg_cpp(test_run1
   "/home/lz/test_demo/src/test_run1/msg/spat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/test_run1
+)
+_generate_msg_cpp(test_run1
+  "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/test_run1
 )
 
@@ -112,9 +112,9 @@ get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/gpsUtm.ms
 add_dependencies(test_run1_generate_messages_cpp _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/Object.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_cpp _test_run1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg" NAME_WE)
-add_dependencies(test_run1_generate_messages_cpp _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/spat.msg" NAME_WE)
+add_dependencies(test_run1_generate_messages_cpp _test_run1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_cpp _test_run1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -145,12 +145,6 @@ _generate_msg_eus(test_run1
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/test_run1
 )
 _generate_msg_eus(test_run1
-  "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/test_run1
-)
-_generate_msg_eus(test_run1
   "/home/lz/test_demo/src/test_run1/msg/Object.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
@@ -160,6 +154,12 @@ _generate_msg_eus(test_run1
   "/home/lz/test_demo/src/test_run1/msg/spat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/test_run1
+)
+_generate_msg_eus(test_run1
+  "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/test_run1
 )
 
@@ -185,9 +185,9 @@ get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/gpsUtm.ms
 add_dependencies(test_run1_generate_messages_eus _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/Object.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_eus _test_run1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg" NAME_WE)
-add_dependencies(test_run1_generate_messages_eus _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/spat.msg" NAME_WE)
+add_dependencies(test_run1_generate_messages_eus _test_run1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_eus _test_run1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -218,12 +218,6 @@ _generate_msg_lisp(test_run1
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/test_run1
 )
 _generate_msg_lisp(test_run1
-  "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/test_run1
-)
-_generate_msg_lisp(test_run1
   "/home/lz/test_demo/src/test_run1/msg/Object.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
@@ -233,6 +227,12 @@ _generate_msg_lisp(test_run1
   "/home/lz/test_demo/src/test_run1/msg/spat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/test_run1
+)
+_generate_msg_lisp(test_run1
+  "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/test_run1
 )
 
@@ -258,9 +258,9 @@ get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/gpsUtm.ms
 add_dependencies(test_run1_generate_messages_lisp _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/Object.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_lisp _test_run1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg" NAME_WE)
-add_dependencies(test_run1_generate_messages_lisp _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/spat.msg" NAME_WE)
+add_dependencies(test_run1_generate_messages_lisp _test_run1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_lisp _test_run1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -291,12 +291,6 @@ _generate_msg_nodejs(test_run1
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/test_run1
 )
 _generate_msg_nodejs(test_run1
-  "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/test_run1
-)
-_generate_msg_nodejs(test_run1
   "/home/lz/test_demo/src/test_run1/msg/Object.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
@@ -306,6 +300,12 @@ _generate_msg_nodejs(test_run1
   "/home/lz/test_demo/src/test_run1/msg/spat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/test_run1
+)
+_generate_msg_nodejs(test_run1
+  "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/test_run1
 )
 
@@ -331,9 +331,9 @@ get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/gpsUtm.ms
 add_dependencies(test_run1_generate_messages_nodejs _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/Object.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_nodejs _test_run1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg" NAME_WE)
-add_dependencies(test_run1_generate_messages_nodejs _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/spat.msg" NAME_WE)
+add_dependencies(test_run1_generate_messages_nodejs _test_run1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_nodejs _test_run1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -364,12 +364,6 @@ _generate_msg_py(test_run1
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/test_run1
 )
 _generate_msg_py(test_run1
-  "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/test_run1
-)
-_generate_msg_py(test_run1
   "/home/lz/test_demo/src/test_run1/msg/Object.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
@@ -379,6 +373,12 @@ _generate_msg_py(test_run1
   "/home/lz/test_demo/src/test_run1/msg/spat.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/test_run1
+)
+_generate_msg_py(test_run1
+  "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg"
+  "${MSG_I_FLAGS}"
+  ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/test_run1
 )
 
@@ -404,9 +404,9 @@ get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/gpsUtm.ms
 add_dependencies(test_run1_generate_messages_py _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/Object.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_py _test_run1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qtGUI.msg" NAME_WE)
-add_dependencies(test_run1_generate_messages_py _test_run1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/spat.msg" NAME_WE)
+add_dependencies(test_run1_generate_messages_py _test_run1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lz/test_demo/src/test_run1/msg/qt_GUI.msg" NAME_WE)
 add_dependencies(test_run1_generate_messages_py _test_run1_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

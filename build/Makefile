@@ -335,17 +335,17 @@ test_run1_generate_messages_cpp/fast:
 .PHONY : test_run1_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named _test_run1_generate_messages_check_deps_qtGUI
+# Target rules for targets named _test_run1_generate_messages_check_deps_qt_GUI
 
 # Build rule for target.
-_test_run1_generate_messages_check_deps_qtGUI: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _test_run1_generate_messages_check_deps_qtGUI
-.PHONY : _test_run1_generate_messages_check_deps_qtGUI
+_test_run1_generate_messages_check_deps_qt_GUI: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _test_run1_generate_messages_check_deps_qt_GUI
+.PHONY : _test_run1_generate_messages_check_deps_qt_GUI
 
 # fast build rule for target.
-_test_run1_generate_messages_check_deps_qtGUI/fast:
-	$(MAKE) -f test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_qtGUI.dir/build.make test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_qtGUI.dir/build
-.PHONY : _test_run1_generate_messages_check_deps_qtGUI/fast
+_test_run1_generate_messages_check_deps_qt_GUI/fast:
+	$(MAKE) -f test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_qt_GUI.dir/build.make test_run1/CMakeFiles/_test_run1_generate_messages_check_deps_qt_GUI.dir/build
+.PHONY : _test_run1_generate_messages_check_deps_qt_GUI/fast
 
 #=============================================================================
 # Target rules for targets named _test_run1_generate_messages_check_deps_Object
@@ -789,7 +789,7 @@ help:
 	@echo "... test_run1_generate_messages_nodejs"
 	@echo "... test_run1_gencpp"
 	@echo "... test_run1_generate_messages_cpp"
-	@echo "... _test_run1_generate_messages_check_deps_qtGUI"
+	@echo "... _test_run1_generate_messages_check_deps_qt_GUI"
 	@echo "... _test_run1_generate_messages_check_deps_Object"
 	@echo "... _test_run1_generate_messages_check_deps_gpsUtm"
 	@echo "... std_msgs_generate_messages_py"

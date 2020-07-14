@@ -5,11 +5,11 @@ import numpy as np
 from PySide2 import QtCore
 from PySide2 import QtWidgets
 from PySide2 import QtGui
-from test_run1.msg import spat
-from test_run1.msg import gpsUtm
-from test_run1.msg import Object
-from test_run1.msg import advSpeed
-from test_run1.msg import qtGUI
+# from test_run1.msg import spat
+# from test_run1.msg import gpsUtm
+# from test_run1.msg import Object
+# from test_run1.msg import advSpeed
+from test_run1.msg import qt_GUI
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self,widget):
@@ -49,7 +49,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # Status Bar
         self.status = self.statusBar()
-        self.status.showMessage("Data loaded and plotted")
+        self.status.showMessage("Data loaded and ready to connect")
 
         # Window dimensions
         # geometry = QtCore.qApp.desktop().availableGeometry(self)
@@ -320,7 +320,7 @@ class Widget(QtWidgets.QWidget):
         self.lcdTimeStraightSignal.display(str(msg.StrlikelyEndTime))
         self.lcdTimeRightSignal.display(str(msg.RightlikelyEndTime))
         # change the pre info
-        self.limitSpeed.setText(str(round(msg.LimitSpeed,1)))
+        self.limitSpeed.setText(str(round(msg.LimitSpeed*3.6,1)))
         self.dis2Stop.setText(str(round(msg.Dis2Stopline,2)))
         self.interID.setText(str(msg.intersectionID))
         # Change the color of signal indication pics
@@ -370,11 +370,11 @@ class Widget(QtWidgets.QWidget):
                 self.rightSignal.setPixmap(picrg) 
             else:
                 pass
-        self.evSpeed.setText(str(round(msg.EgoSpeed)))
-        self.pvSpeed.setText(str(round(msg.PreSpeed)))
-        self.latitude.setText(str(round(msg.latitude,5)))
-        self.longitude.setText(str(msg.longitude))
-        self.height.setText(str(msg.height))
+        self.evSpeed.setText(str(round(msg.EgoSpeed*3.6)))
+        self.pvSpeed.setText(str(round(msg.PreSpeed*3.6)))
+        self.latitude.setText(str(round(msg.Latitude,5)))
+        self.longitude.setText(str(msg.Longitude))
+        self.height.setText(str(msg.Height))
         upperV = 3.6*msg.upperSpeed
         lowerV = 3.6*msg.bottomSpeed
         if msg.keepCurSpeed == 1:
@@ -396,7 +396,7 @@ class Widget(QtWidgets.QWidget):
         # rospy.Subscriber("v2x_spat",spat,self.v2xCallback)
         # rospy.Subscriber("esr_object",Object,self.esrCallback)
         # rospy.Subscriber("advSpeed",advSpeed,self.glosaCallback)
-        rospy.Subscriber("gui",qtGUI,self.guiCallback)
+        rospy.Subscriber("gui",qt_GUI,self.guiCallback)
         # rospy.spin()
 
 if __name__ == "__main__":
