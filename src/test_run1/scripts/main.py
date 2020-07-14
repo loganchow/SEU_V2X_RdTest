@@ -9,7 +9,7 @@ from test_run1.msg import spat
 from test_run1.msg import gpsUtm
 from test_run1.msg import Object
 from test_run1.msg import advSpeed
-from from test_run1.msg import qtGUI
+from test_run1.msg import qtGUI
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self,widget):
@@ -362,11 +362,11 @@ class Widget(QtWidgets.QWidget):
         elif msg.Right_is_val == 1:
             self.validRight.setText("valid")
             self.lcdTimeRightSignal.display(str(msg.LeftlikelyEndTime))
-            if msg.StrSignalState == 3:
+            if msg.RightColor == 3:
                 self.rightSignal.setPixmap(picsr)       
-            elif msg.StrSignalState == 5:
+            elif msg.RightColor == 5:
                 self.rightSignal.setPixmap(picsg)    
-            elif msg.StrSignalState == 4:
+            elif msg.RightColor == 4:
                 self.rightSignal.setPixmap(picrg) 
             else:
                 pass

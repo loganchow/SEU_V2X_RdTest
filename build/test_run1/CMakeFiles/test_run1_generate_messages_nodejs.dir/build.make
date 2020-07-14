@@ -53,18 +53,25 @@ CMAKE_BINARY_DIR = /home/lz/test_demo/build
 # Include the progress variables for this target.
 include test_run1/CMakeFiles/test_run1_generate_messages_nodejs.dir/progress.make
 
-test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js
-test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js
-test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/Object.js
 test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/advSpeed.js
 test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js
+test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js
+test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/qtGUI.js
+test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/Object.js
+test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js
 
 
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js: /home/lz/test_demo/src/test_run1/msg/spat.msg
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from test_run1/spat.msg"
-	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/spat.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/advSpeed.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/advSpeed.js: /home/lz/test_demo/src/test_run1/msg/advSpeed.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from test_run1/advSpeed.msg"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/advSpeed.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
+
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js: /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js: /home/lz/test_demo/src/test_run1/msg/Object.msg
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from test_run1/ObjectArray.msg"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
 
 /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js: /home/lz/test_demo/src/test_run1/msg/gpsUtm.msg
@@ -76,33 +83,33 @@ test_run1/CMakeFiles/test_run1_generate_messages_nodejs: /home/lz/test_demo/deve
 /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseWithCovariance.msg
 /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js: /opt/ros/kinetic/share/geometry_msgs/msg/TwistWithCovariance.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from test_run1/gpsUtm.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from test_run1/gpsUtm.msg"
 	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/gpsUtm.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
+
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/qtGUI.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/qtGUI.js: /home/lz/test_demo/src/test_run1/msg/qtGUI.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from test_run1/qtGUI.msg"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/qtGUI.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
 
 /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/Object.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/Object.js: /home/lz/test_demo/src/test_run1/msg/Object.msg
 /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/Object.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from test_run1/Object.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from test_run1/Object.msg"
 	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/Object.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
 
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/advSpeed.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/advSpeed.js: /home/lz/test_demo/src/test_run1/msg/advSpeed.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from test_run1/advSpeed.msg"
-	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/advSpeed.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
-
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js: /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js: /home/lz/test_demo/src/test_run1/msg/Object.msg
-/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from test_run1/ObjectArray.msg"
-	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js: /home/lz/test_demo/src/test_run1/msg/spat.msg
+/home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from test_run1/spat.msg"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lz/test_demo/src/test_run1/msg/spat.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg
 
 test_run1_generate_messages_nodejs: test_run1/CMakeFiles/test_run1_generate_messages_nodejs
-test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js
-test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js
-test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/Object.js
 test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/advSpeed.js
 test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/ObjectArray.js
+test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/gpsUtm.js
+test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/qtGUI.js
+test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/Object.js
+test_run1_generate_messages_nodejs: /home/lz/test_demo/devel/share/gennodejs/ros/test_run1/msg/spat.js
 test_run1_generate_messages_nodejs: test_run1/CMakeFiles/test_run1_generate_messages_nodejs.dir/build.make
 
 .PHONY : test_run1_generate_messages_nodejs

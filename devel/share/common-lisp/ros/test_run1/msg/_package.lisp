@@ -11,6 +11,8 @@
    "GPSUTM"
    "<OBU_MSG>"
    "OBU_MSG"
+   "<QTGUI>"
+   "QTGUI"
    "<SPAT>"
    "SPAT"
   ))

@@ -53,19 +53,26 @@ CMAKE_BINARY_DIR = /home/lz/test_demo/build
 # Include the progress variables for this target.
 include test_run1/CMakeFiles/test_run1_generate_messages_py.dir/progress.make
 
-test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py
-test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py
-test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py
 test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_advSpeed.py
 test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py
+test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py
+test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_qtGUI.py
+test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py
+test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py
 test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py
 
 
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py: /home/lz/test_demo/src/test_run1/msg/spat.msg
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG test_run1/spat"
-	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/spat.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_advSpeed.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_advSpeed.py: /home/lz/test_demo/src/test_run1/msg/advSpeed.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG test_run1/advSpeed"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/advSpeed.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
+
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py: /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py: /home/lz/test_demo/src/test_run1/msg/Object.msg
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG test_run1/ObjectArray"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
 
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py: /home/lz/test_demo/src/test_run1/msg/gpsUtm.msg
@@ -77,42 +84,43 @@ test_run1/CMakeFiles/test_run1_generate_messages_py: /home/lz/test_demo/devel/li
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py: /opt/ros/kinetic/share/geometry_msgs/msg/PoseWithCovariance.msg
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py: /opt/ros/kinetic/share/geometry_msgs/msg/TwistWithCovariance.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG test_run1/gpsUtm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG test_run1/gpsUtm"
 	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/gpsUtm.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
+
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_qtGUI.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_qtGUI.py: /home/lz/test_demo/src/test_run1/msg/qtGUI.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG test_run1/qtGUI"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/qtGUI.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
 
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py: /home/lz/test_demo/src/test_run1/msg/Object.msg
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG test_run1/Object"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG test_run1/Object"
 	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/Object.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
 
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_advSpeed.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_advSpeed.py: /home/lz/test_demo/src/test_run1/msg/advSpeed.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG test_run1/advSpeed"
-	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/advSpeed.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
-
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py: /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py: /home/lz/test_demo/src/test_run1/msg/Object.msg
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG test_run1/ObjectArray"
-	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/ObjectArray.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py: /home/lz/test_demo/src/test_run1/msg/spat.msg
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG test_run1/spat"
+	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lz/test_demo/src/test_run1/msg/spat.msg -Itest_run1:/home/lz/test_demo/src/test_run1/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p test_run1 -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg
 
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py
-/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_advSpeed.py
 /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python msg __init__.py for test_run1"
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_qtGUI.py
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py
+/home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lz/test_demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python msg __init__.py for test_run1"
 	cd /home/lz/test_demo/build/test_run1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg --initpy
 
 test_run1_generate_messages_py: test_run1/CMakeFiles/test_run1_generate_messages_py
-test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py
-test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py
-test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py
 test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_advSpeed.py
 test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_ObjectArray.py
+test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_gpsUtm.py
+test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_qtGUI.py
+test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_Object.py
+test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/_spat.py
 test_run1_generate_messages_py: /home/lz/test_demo/devel/lib/python2.7/dist-packages/test_run1/msg/__init__.py
 test_run1_generate_messages_py: test_run1/CMakeFiles/test_run1_generate_messages_py.dir/build.make
 

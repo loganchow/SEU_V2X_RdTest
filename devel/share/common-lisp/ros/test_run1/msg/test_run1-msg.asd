@@ -16,6 +16,8 @@
     (:file "_package_gpsUtm" :depends-on ("_package"))
     (:file "obu_msg" :depends-on ("_package_obu_msg"))
     (:file "_package_obu_msg" :depends-on ("_package"))
+    (:file "qtGUI" :depends-on ("_package_qtGUI"))
+    (:file "_package_qtGUI" :depends-on ("_package"))
     (:file "spat" :depends-on ("_package_spat"))
     (:file "_package_spat" :depends-on ("_package"))
   ))

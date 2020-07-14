@@ -56,6 +56,7 @@ add_message_files(
 	Object.msg
 	ObjectArray.msg
 	advSpeed.msg
+  qtGUI.msg
 )
 
 ## Generate services in the 'srv' folder
