@@ -320,8 +320,8 @@ class Widget(QtWidgets.QWidget):
         self.lcdTimeStraightSignal.display(str(msg.StrlikelyEndTime))
         self.lcdTimeRightSignal.display(str(msg.RightlikelyEndTime))
         # change the pre info
-        self.limitSpeed.setText(str(msg.LimitSpeed))
-        self.dis2Stop.setText(str(msg.Dis2Stopline))
+        self.limitSpeed.setText(str(round(msg.LimitSpeed,1)))
+        self.dis2Stop.setText(str(round(msg.Dis2Stopline,2)))
         self.interID.setText(str(msg.intersectionID))
         # Change the color of signal indication pics
         # self.rightSignal.setPixmap(picrg)
@@ -370,9 +370,9 @@ class Widget(QtWidgets.QWidget):
                 self.rightSignal.setPixmap(picrg) 
             else:
                 pass
-        self.evSpeed.setText(str(EgoSpeed))
-        self.pvSpeed.setText(str(PreSpeed))
-        self.latitude.setText(str(msg.latitude))
+        self.evSpeed.setText(str(round(msg.EgoSpeed)))
+        self.pvSpeed.setText(str(round(msg.PreSpeed)))
+        self.latitude.setText(str(round(msg.latitude,5)))
         self.longitude.setText(str(msg.longitude))
         self.height.setText(str(msg.height))
         upperV = 3.6*msg.upperSpeed
