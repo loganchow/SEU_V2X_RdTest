@@ -373,8 +373,8 @@ class Widget(QtWidgets.QWidget):
         self.evSpeed.setText(str(round(msg.EgoSpeed*3.6)))
         self.pvSpeed.setText(str(round(msg.PreSpeed*3.6)))
         self.latitude.setText(str(round(msg.Latitude,5)))
-        self.longitude.setText(str(msg.Longitude))
-        self.height.setText(str(msg.Height))
+        self.longitude.setText(str(round(msg.Longitude,5)))
+        self.height.setText(str(round(msg.Height,5)))
         upperV = 3.6*msg.upperSpeed
         lowerV = 3.6*msg.bottomSpeed
         if msg.keepCurSpeed == 1:
